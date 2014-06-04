@@ -1,0 +1,12 @@
+<ion-view title="Subcategorias">
+  <ion-content class="has-header">
+    <h1>{{subcategoria[0].nome}}</h1>
+      <ion-list class="list">
+          <ion-item ng-repeat="sub in subcategoria" href="#/app/subcategoria/{{sub.id}}" class="item item-avatar-left">
+              <img src="img/ionic.png" width="50">
+              <h2>{{sub.nome}}</h2>
+              <p>Teste</p>
+          </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

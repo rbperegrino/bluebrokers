@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+
+body{
+	background-image:url(../images/bright_squares.png);
+	background-repeat:repeat;
+}
+
+.center-wrapper{
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+.ipad-body{
+	background-image:url(../images/ipad-body.png);
+	background-repeat:no-repeat;
+	display:block;
+	width:825px;
+	height:900px;
+}
+
+
+.ipad-body-end{
+	background-image:url(../images/ipad-end.png);
+	background-repeat:no-repeat;
+	width:45px;
+	height:905px;
+	position:absolute;
+	display:block;
+}
+
+.iframe{
+	position:absolute;
+	margin-top:50px;
+	margin-left:46px;
+}
+
+iframe{
+	display:block;
+}
+
+.go-mobile{
+	position:absolute;
+	margin-left:-180px;
+	margin-top:300px;
+}
