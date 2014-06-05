@@ -4,15 +4,13 @@
 
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>{{subcategorias[0].categoria || 'Não Informado'}}</h1>
+    <h1>{{ produtos[0].categoria }} / {{ produtos[0].subcategoria }}</h1>
       <ion-list class="list">
-          <ion-item ng-repeat="subcategoria in subcategorias" href="#/app/subcategorias/{{subcategoria.id}}" class="item item-thumbnail-left">
+          <ion-item ng-repeat="produto in produtos" href="#/app/produto/{{produto.id}}" class="item item-thumbnail-left">
               <img src="img/ionic.png" width="50">
-              <h2>{{subcategoria.nome}}</h2>
+              <h2>{{produto.nome}}</h2>
               <p>Teste</p>
           </ion-item>
-
       </ion-list>
-
   </ion-content>
 </ion-view>

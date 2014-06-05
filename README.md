@@ -1,4 +1,4 @@
-Ionic App Base
+BlueBrokers App
 =====================
 
 A starting project for Ionic that optionally supports

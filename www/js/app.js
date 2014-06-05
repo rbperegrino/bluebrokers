@@ -67,15 +67,44 @@ angular.module('blueBrokers', ['ionic', 'blueBrokers.controllers'])
       }
     })
 
-    .state('app.novoAnuncio', {
-      url: "/novoAnuncio",
+    .state('app.subcategorias', {
+      url: "/subcategorias/:subcategoriaId",
       views: {
           'menuContent' :{
-              templateUrl: "templates/anuncio.html",
-              controller: 'AnuncioCtrl'
+              templateUrl: "templates/subcategoria.html",
+              controller: 'SubcategoriaCtrl'
           }
       }
-    });
+    })
+
+  .state('app.produto', {
+      url: "/produto/:produtoId",
+      views: {
+          'menuContent' :{
+              templateUrl: "templates/produto.html",
+              controller: 'ProdutoCtrl'
+          }
+      }
+  })
+
+.state('app.novoAnuncio', {
+  url: "/novoAnuncio",
+  views: {
+      'menuContent' :{
+          templateUrl: "templates/anuncio.html",
+          controller: 'AnuncioCtrl'
+      }
+  }
+})
+
+.state('app.quemSomos', {
+  url: "/quemSomos",
+  views: {
+      'menuContent' :{
+          templateUrl: "templates/quem_somos.html"
+      }
+  }
+});
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/categorias');
 });

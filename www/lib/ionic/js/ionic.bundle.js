@@ -41074,6 +41074,7 @@ function($animate, $rootScope) {
     require: '^ionNavBar',
     compile: function(tElement, tAttrs) {
       tElement.addClass('button back-button ng-hide');
+
       return function($scope, $element, $attr, navBarCtrl) {
         if (!$attr.ngClick) {
           $scope.$navBack = navBarCtrl.back;
