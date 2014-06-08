@@ -1,0 +1,20 @@
+<ion-view title="">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+
+        <h3 class="padding-left">Publicar</h3>
+        <h4 class="padding-left">Escolha a subcategoria</h4>
+        <ion-list class="list">
+            <ion-item ng-repeat="categoria in subcategorias" href="#/app/novoAnuncio4/{{categoriaId}}/}}{{categoria.id}}" class="item">
+
+                <p>{{categoria.nome}}</p>
+
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

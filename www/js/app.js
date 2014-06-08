@@ -97,6 +97,37 @@ angular.module('blueBrokers', ['ionic', 'blueBrokers.controllers'])
   }
 })
 
+.state('app.novoAnuncio2', {
+  url: "/novoAnuncio2",
+  views: {
+      'menuContent' :{
+          templateUrl: "templates/anuncio2.html",
+          controller: 'Anuncio2Ctrl'
+      }
+  }
+})
+
+.state('app.novoAnuncio3', {
+  url: "/novoAnuncio3/:categoriaId",
+  views: {
+      'menuContent' :{
+          templateUrl: "templates/anuncio3.html",
+          controller: 'Anuncio3Ctrl'
+      }
+  }
+})
+
+
+  .state('app.novoAnuncio4', {
+      url: "/novoAnuncio4/:categoriaId/:subcategoriaId",
+      views: {
+          'menuContent' :{
+              templateUrl: "templates/anuncio4.html",
+              controller: 'Anuncio4Ctrl'
+          }
+      }
+  })
+
 .state('app.quemSomos', {
   url: "/quemSomos",
   views: {

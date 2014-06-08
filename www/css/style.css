@@ -1,16 +1,96 @@
 /* Empty. Add your own CSS if you like */
 
+*{
+    font-family:'Lato', sans-serif;
+}
+
+
 .bar.bar-stable{
-    background: #f0f9ff; /* Old browsers */
-    background: -moz-linear-gradient(top,  #f0f9ff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #f0f9ff 0%, #cbebff 47%,#a1dbff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+    background: url('../img/logo3.jpg') center center no-repeat #f0f9ff;
+    background-size: 32%;
 }
 
 .menu .bar.bar-stable{
-    background: red;
+    background: #133c6a;
 }
+
+.menu .bar.bar-stable h1{
+    color: white;
+}
+
+.button.button-positive.button-icon{
+    background: #133c6a;
+    font-size: medium;
+}
+
+.bar.bar-positive{
+    background: #133c6a;
+}
+
+.bar.bar-footer h1{
+    font-size: 15px;
+ }
+
+#quem-somos p{
+    text-align: justify;
+}
+
+#produtos  .item a{
+    border-bottom: 1px solid #000;
+
+}
+
+#produtos  .item h2{
+    color: #000;
+}
+
+#produtos .item.destaque:first-child a{
+    border-top: 1px solid #133c6a;
+}
+
+#produtos  .item.destaque a{
+    background: rgba(240, 249, 255, 0.31);
+    border-bottom: 1px solid #133c6a;
+
+}
+
+#produtos  .item.destaque h2{
+    color: #133c6a;
+}
+
+.list.card{
+    margin-bottom: 30px;
+}
+
+.lista-categorias > div{
+     padding: 10px !important;
+}
+
+.categorias{
+    width: 31%;
+    float: left;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+.categorias a{
+    background-color: #133c6a !important;
+    padding: 15px !important;
+
+    white-space: normal;
+}
+
+.categorias a h2{
+    color: #FFF !important;
+    font-size: 10px;
+    text-align: center;
+}
+
+.envia-foto{
+    background: #133c6a;
+    padding: 5px 10px;
+    color: white;
+    float: right;
+    margin-left: 48px;
+}
+

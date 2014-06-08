@@ -4,12 +4,19 @@
 
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>{{ produtos[0].categoria }} / {{ produtos[0].subcategoria }}</h1>
-      <ion-list class="list">
-          <ion-item ng-repeat="produto in produtos" href="#/app/produto/{{produto.id}}" class="item item-thumbnail-left">
-              <img src="img/ionic.png" width="50">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="Buscar">
+          </label>
+      </div>
+    <h3 class="padding-left">{{ produtos[0].categoria }} / {{ produtos[0].subcategoria }}</h3>
+      <ion-list class="list" id="produtos">
+          <ion-item ng-repeat="produto in produtos | orderBy:destaque" href="#/app/produto/{{produto.id}}" class="item item-thumbnail-left" ng-class="(produto.destaque) ? 'destaque' : ''">
+              <img src="img/barco.jpg" width="50">
               <h2>{{produto.nome}}</h2>
-              <p>Teste</p>
+              <h5>{{produto.localizacao}}</h5>
+              <p>{{produto.valor || 'Solicite Orçamento'}}</p>
           </ion-item>
       </ion-list>
   </ion-content>
