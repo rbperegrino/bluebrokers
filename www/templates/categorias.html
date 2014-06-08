@@ -4,10 +4,10 @@
 
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
-      <a href="#/app/novoAnuncio" class="button button-icon button-positive"> Publicar </a>
+      <a href="#/app/novoAnuncio" id="publicar" class="button button-icon button-positive"> Publicar </a>
   </ion-nav-buttons>
   <ion-content class="has-header">
-      <div class="list list-inset">
+      <div class="busca list list-inset">
           <label class="item item-input">
               <i class="icon ion-search placeholder-icon"></i>
               <input type="text" placeholder="Buscar">
@@ -15,7 +15,7 @@
       </div>
     <ion-list class="list lista-categorias">
       <ion-item ng-repeat="categoria in categorias" href="#/app/categorias/{{categoria.id}}" class="categorias">
-        <img src="img/barco.png" width="60">
+        <img src="img/barco.png">
         <h2>{{categoria.nome}}</h2>
 
       </ion-item>

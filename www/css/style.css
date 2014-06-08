@@ -6,8 +6,8 @@
 
 
 .bar.bar-stable{
-    background: url('../img/logo3.jpg') center center no-repeat #f0f9ff;
-    background-size: 32%;
+    background: url('../img/logo.png') center center no-repeat #f0f9ff;
+    background-size: 18%;
 }
 
 .menu .bar.bar-stable{
@@ -18,10 +18,26 @@
     color: white;
 }
 
-.button.button-positive.button-icon{
-    background: #133c6a;
-    font-size: medium;
+#publicar{
+    font-size: 11px;
+    padding: 0 8px;
+    font-weight: bold;
+    background: #1a9cd8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1a9cd8 0%, #1478b2 31%, #013d63 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1a9cd8), color-stop(31%,#1478b2), color-stop(100%,#013d63)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #1a9cd8 0%,#1478b2 31%,#013d63 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #1a9cd8 0%,#1478b2 31%,#013d63 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #1a9cd8 0%,#1478b2 31%,#013d63 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #1a9cd8 0%,#1478b2 31%,#013d63 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a9cd8', endColorstr='#013d63',GradientType=0 ); /* IE6-9 */
+    border-radius: 5px;
+    height: 20px;
+    line-height: 28px;
+    margin-top: 2px;
+    margin-right: 10px;
 }
+
+
 
 .bar.bar-positive{
     background: #133c6a;
@@ -63,7 +79,7 @@
 }
 
 .lista-categorias > div{
-     padding: 10px !important;
+     padding: 0px 10px !important;
 }
 
 .categorias{
@@ -80,9 +96,14 @@
     white-space: normal;
 }
 
+.categorias a img{
+    width: 85px;
+    margin-left: -11px;
+}
+
 .categorias a h2{
     color: #FFF !important;
-    font-size: 10px;
+    font-size: 9px;
     text-align: center;
 }
 
@@ -93,4 +114,17 @@
     float: right;
     margin-left: 48px;
 }
+
+.busca{
+    margin: 8px 15px;
+}
+
+.busca .item{
+    padding: 0 5px;
+    margin: 0;
+    /* line-height: 20px; */
+    height: 30px;
+}
+
+
 
