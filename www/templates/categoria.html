@@ -10,7 +10,7 @@
               <input type="text" placeholder="Buscar">
           </label>
       </div>
-      <h3 class="padding-left">{{subcategorias[0].categoria || 'Não Informado'}}</h3>
+      <h3 class="titulo">{{subcategorias[0].categoria || 'Não Informado'}}</h3>
       <ion-list class="list">
           <ion-item ng-repeat="subcategoria in subcategorias" href="#/app/subcategorias/{{subcategoria.id}}" class="item item-thumbnail-left">
               <img src="img/barco_p.png" width="50">

@@ -16,22 +16,25 @@
 
           <div class="item item-body">
               <img class="full-image" ng-src="{{produto.fotos[0]}}">
-              <p>
+
+              <div class="item tabs tabs-secondary tabs-icon-left padding-bottom">
+                  <a class="tab-item" href="mailto:email@email.com">
+                      <i class="icon ion-ios7-email"></i>
+                      Enviar Email
+                  </a>
+                  <a class="tab-item" ng-click="openModal()">
+                      <i class="icon ion-ios7-telephone"></i>
+                      Ligar
+                  </a>
+              </div>
+
+              <p id="descricao-produto">
                   {{produto.descricao}}
               </p>
 
           </div>
 
-          <div class="item tabs tabs-secondary tabs-icon-left padding-bottom">
-              <a class="tab-item" href="mailto:email@email.com">
-                  <i class="icon ion-ios7-email"></i>
-                  Enviar Email
-              </a>
-              <a class="tab-item" ng-click="openModal()">
-                  <i class="icon ion-ios7-telephone"></i>
-                  Ligar
-              </a>
-          </div>
+
 
       </div>
 

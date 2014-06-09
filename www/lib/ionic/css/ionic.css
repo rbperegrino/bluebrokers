@@ -2270,7 +2270,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #000;
   font-weight: 500;
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 1.2; }
+  line-height: 1.2;  }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
     line-height: 1; }
@@ -3619,8 +3619,8 @@ a.item-content {
     border-radius: 4px; }
 
 .item-thumbnail-left, .item-thumbnail-left .item-content {
-  padding-left: 105px;
-  min-height: 100px; }
+   padding-left: 105px;
+   min-height: 100px; }
   .item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image {
     position: absolute;
     top: 10px;

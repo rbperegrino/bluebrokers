@@ -37,15 +37,32 @@
     margin-right: 10px;
 }
 
+h3.titulo{
+    font-size: 13px;
+    text-align: center;
+    background: #f0f9ff;
+    width: 90%;
+    margin: 5px 5%;
+    border-radius: 7px;
+    color: #133c6a;
 
+}
 
 .bar.bar-positive{
     background: #133c6a;
 }
 
+.bar.bar-footer{
+    padding: 0;
+    height: 24px;
+
+}
+
 .bar.bar-footer h1{
-    font-size: 15px;
- }
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+}
 
 #quem-somos p{
     text-align: justify;
@@ -92,8 +109,26 @@
 .categorias a{
     background-color: #133c6a !important;
     padding: 15px !important;
+}
 
-    white-space: normal;
+.categorias a:before{
+     content: '';
+     border: 1px solid #86def6;
+     position: absolute;
+     width: 96%;
+     height: 96%;
+     left: 2%;
+     top: 2%;
+ }
+
+.categorias a:after{
+    content: '';
+    border: 1px solid #FFF;
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    left: 3%;
+    top: 3%;
 }
 
 .categorias a img{
@@ -126,5 +161,22 @@
     height: 30px;
 }
 
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+     /* min-height: 50px; */
+    height: 30px;
 
+}
+
+.item-thumbnail-left h2, .item-thumbnail-left .item-content h2{
+    /* font-size: 12px; */
+}
+
+.item-thumbnail-left img, .item-thumbnail-left .item-content img{
+    width: 60px;
+}
+
+#descricao-produto{
+    font-size: 12px;
+    text-align: justify;
+}
 

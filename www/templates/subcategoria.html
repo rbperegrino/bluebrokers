@@ -10,7 +10,7 @@
               <input type="text" placeholder="Buscar">
           </label>
       </div>
-    <h3 class="padding-left">{{ produtos[0].categoria }} / {{ produtos[0].subcategoria }}</h3>
+    <h3 class="titulo">{{ produtos[0].categoria }} / {{ produtos[0].subcategoria }}</h3>
       <ion-list class="list" id="produtos">
           <ion-item ng-repeat="produto in produtos | orderBy:destaque" href="#/app/produto/{{produto.id}}" class="item item-thumbnail-left" ng-class="(produto.destaque) ? 'destaque' : ''">
               <img src="img/barco.jpg" width="50">
