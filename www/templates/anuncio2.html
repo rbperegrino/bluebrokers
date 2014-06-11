@@ -5,11 +5,12 @@
     </ion-nav-buttons>
     <ion-content class="has-header">
 
-        <h3 class="padding-left">Publicar</h3>
-        <h4 class="padding-left">Escolha a categoria</h4>
-        <ion-list class="list">
-            <ion-item ng-repeat="categoria in categorias" href="#/app/novoAnuncio3/{{categoria.id}}" class="item item-avatar">
-                <img src="img/barco_p.png">
+        <h3 class="titulo">Escolha a categoria</h3>
+        <ion-list id="subcategorias" class="list">
+            <ion-item ng-repeat="categoria in categorias" href="#/app/novoAnuncio3/{{categoria.id}}" class="item item-thumbnail-left">
+                <div class="img_sub">
+                    <img src="img/barco.png" width="50">
+                </div>
                 <h2>{{categoria.nome}}</h2>
 
             </ion-item>
@@ -18,3 +19,5 @@
 
     </ion-content>
 </ion-view>
+
+

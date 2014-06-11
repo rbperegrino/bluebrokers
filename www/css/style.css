@@ -73,6 +73,10 @@ h3.titulo{
     text-align: justify;
 }
 
+#produtos .item{
+    min-height: 0px;
+}
+
 #produtos  .item a{
     border-bottom: 1px solid #000;
 
@@ -87,13 +91,31 @@ h3.titulo{
 }
 
 #produtos  .item.destaque a{
-    background: rgba(240, 249, 255, 0.31);
+    /*background: rgba(240, 249, 255, 0.31);*/
+    background: #f0f9ff;
     border-bottom: 1px solid #133c6a;
 
 }
 
-#produtos  .item.destaque h2{
+#produtos a{
+    padding: 8px 10px 10px 100px;
+    min-height: 30px;
+}
+
+#produtos .item.destaque h2{
     color: #133c6a;
+}
+
+#produtos h2{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#produtos p{
+    color: #133c6a;
+    font-size: 12px;
+    font-weight: bold;
+    color: orange;
 }
 
 .list.card{
@@ -178,32 +200,103 @@ h3.titulo{
 #subcategorias .item-thumbnail-left .img_sub, #subcategorias .item-thumbnail-left .item-content .img_sub{
     width: 30px;
     margin: 0;
-    left: -5px;
-    top: -7px;
+    /* left: -5px; */
+    /* top: -7px; */
     background: #133c6a;
     height: 30px;
-    /* float: left; */
-    position: absolute;
+    float: left;
+    position: relative;
+    margin-right: 6px;
 }
 
 #subcategorias .img_sub img, #subcategorias .img_sub img{
-    width: 85%;
-    left: 4px;
+    width: 100%;
+    left: 0px;
     top: 3px;
-    position: relative;
+    position: absolute;
 }
 
 #subcategorias .item-thumbnail-left h2, #subcategorias .item-thumbnail-left .item-content h2{
      font-size: 12px;
     font-weight: bold;
-     padding-left: 25px;
+     /* padding-left: 25px; */
      margin-top: 2px;
 }
 
+.card .item{
+    /*padding: 10px;*/
+}
 
+.card .item h2{
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.card .item p{
+    margin: 0;
+}
+
+.card p.preco{
+    color: orange;
+    font-weight: bold;
+}
+
+.card p.localizacao{
+    font-size: 11px;
+}
 
 #descricao-produto{
     font-size: 12px;
     text-align: justify;
+    /*line-height: 16px;*/
 }
+
+.checkbox{
+    height: 20px;
+    padding: 0;
+}
+
+.checkbox input{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+}
+
+.checkbox input:before{
+    border-radius: 5px;
+    border-color: #133c6a;
+}
+
+.checkbox input:checked:before{
+    background: #133c6a;
+}
+
+.checkbox input:after{
+    top: 15%;
+    left: 13%;
+}
+
+.checkbox span{
+    display: inline-block;
+    margin-top: -22px;
+    float: left;
+    margin-left: 29px;
+    font-size: 11px;
+
+}
+
+.botao-imagem{
+    background: #f0f9ff;
+    height: 100px;
+    line-height: 87px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: #E0E9EB;
+
+    border: 3px solid #FFF;
+}
+
+
 

@@ -151,7 +151,7 @@ angular.module('blueBrokers.controllers', [])
             { nome: 'Marca C', id: 3, categoria: 'Barcos'}
         ];
 
-        console.log($scope.subcategorias);
+
 }])
 
 .controller('Anuncio4Ctrl', ['$scope','$stateParams',function($scope, $stateParams) {
@@ -159,7 +159,10 @@ angular.module('blueBrokers.controllers', [])
     $scope.categoriaId = $stateParams.categoriaId;
     $scope.subcategoriaId = $stateParams.subcategoriaId;
 
-
+    $scope.titulos = {
+        categoria : 'Barcos',
+        subcategoria : 'Marca A'
+        }
 
 
 }])
