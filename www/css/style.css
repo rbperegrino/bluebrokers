@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
 *{
-    font-family:'Lato', sans-serif;
+    font-family: 'Lato', sans-serif !important;
 }
 
 
@@ -18,7 +18,7 @@
     color: white;
 }
 
-#publicar{
+#publicar, #bt-app{
     font-size: 11px;
     padding: 0 8px;
     font-weight: bold;
@@ -35,6 +35,11 @@
     line-height: 28px;
     margin-top: 2px;
     margin-right: 10px;
+    min-height: 31px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: 'Lato', sans-serif;
 }
 
 h3.titulo{
@@ -138,8 +143,9 @@ h3.titulo{
 
 .categorias a h2{
     color: #FFF !important;
-    font-size: 9px;
+    font-size: 11px;
     text-align: center;
+
 }
 
 .envia-foto{
@@ -161,19 +167,40 @@ h3.titulo{
     height: 30px;
 }
 
-.item-thumbnail-left, .item-thumbnail-left .item-content{
-     /* min-height: 50px; */
+#subcategorias .item-thumbnail-left, #subcategorias .item-thumbnail-left .item-content{
     height: 30px;
-
+    max-height: 30px;
+    min-height: 30px;
+    line-height: 30px;
+    padding: 3px 45px 5px 10px;
 }
 
-.item-thumbnail-left h2, .item-thumbnail-left .item-content h2{
-    /* font-size: 12px; */
+#subcategorias .item-thumbnail-left .img_sub, #subcategorias .item-thumbnail-left .item-content .img_sub{
+    width: 30px;
+    margin: 0;
+    left: -5px;
+    top: -7px;
+    background: #133c6a;
+    height: 30px;
+    /* float: left; */
+    position: absolute;
 }
 
-.item-thumbnail-left img, .item-thumbnail-left .item-content img{
-    width: 60px;
+#subcategorias .img_sub img, #subcategorias .img_sub img{
+    width: 85%;
+    left: 4px;
+    top: 3px;
+    position: relative;
 }
+
+#subcategorias .item-thumbnail-left h2, #subcategorias .item-thumbnail-left .item-content h2{
+     font-size: 12px;
+    font-weight: bold;
+     padding-left: 25px;
+     margin-top: 2px;
+}
+
+
 
 #descricao-produto{
     font-size: 12px;

@@ -11,9 +11,11 @@
           </label>
       </div>
       <h3 class="titulo">{{subcategorias[0].categoria || 'Não Informado'}}</h3>
-      <ion-list class="list">
+      <ion-list id="subcategorias" class="list">
           <ion-item ng-repeat="subcategoria in subcategorias" href="#/app/subcategorias/{{subcategoria.id}}" class="item item-thumbnail-left">
-              <img src="img/barco_p.png" width="50">
+              <div class="img_sub">
+                <img src="img/barco.png" width="50">
+              </div>
               <h2>{{subcategoria.nome}}</h2>
 
           </ion-item>
