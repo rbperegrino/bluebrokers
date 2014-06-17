@@ -6,37 +6,37 @@
 
     <h3 class="titulo">Categorias: {{titulos.categoria}} / {{titulos.subcategoria}}</h3>
 
-      <form action="#/app/produto/1" method="get">
+      <form name="anuncio" ng-submit="enviaAnuncio(anuncio.$valid)" novalidate>
 
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Titulo">
+                  <input type="text" ng-model="anuncio.titulo" placeholder="Titulo">
               </label>
           </div>
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Descrição (30 car mínimo)">
+                  <input type="text" ng-model="anuncio.descricao" placeholder="Descrição (30 car mínimo)">
               </label>
           </div>
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Ano de Fabricação">
+                  <input type="text" ng-model="anuncio.ano" placeholder="Ano de Fabricação">
               </label>
           </div>
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Telefone (Opicional)">
+                  <input type="text" ng-model="anuncio.telefone" placeholder="Telefone (Opicional)">
               </label>
           </div>
 
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="email" placeholder="Email (Não será compartilhado)">
+                  <input type="email" ng-model="anuncio.email" placeholder="Email (Não será compartilhado)" required>
               </label>
           </div>
 
@@ -44,13 +44,13 @@
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Cidade">
+                  <input type="text" ng-model="anuncio.cidade" placeholder="Cidade">
               </label>
           </div>
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Estado">
+                  <input type="text" ng-model="anuncio.estado" placeholder="Estado">
               </label>
           </div>
 
@@ -58,23 +58,14 @@
 
           <div class="busca list list-inset">
               <label class="item item-input">
-                  <input type="text" placeholder="Valor">
+                  <input type="text" ng-model="anuncio.valor" placeholder="Valor">
               </label>
           </div>
 
 
-
-
-
-
-
-
-
-
-
           <div class="busca list list-inset">
               <label class="checkbox">
-                  <input type="checkbox">
+                  <input type="checkbox" ng-model="anuncio.concordo" name="concordo" required>
                   <span>Li e Concordo com os <a href="#">termos de uso</a></span>
               </label>
 

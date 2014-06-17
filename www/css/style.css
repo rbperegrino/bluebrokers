@@ -4,17 +4,32 @@
     font-family: 'Lato', sans-serif !important;
 }
 
+.pane{
+    background: #C6C6C6;
+}
 
 .bar.bar-stable{
-    background: url('../img/logo.png') center center no-repeat #f0f9ff;
-    background-size: 18%;
+    background: #f2f6f8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f6f8), color-stop(50%,#d8e1e7), color-stop(51%,#b5c6d0), color-stop(100%,#e0eff9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+
+}
+
+.bar.bar-stable h1.title{
+    background: url('../img/logo.png') center center no-repeat;
+    background-size: 40%;
 }
 
 .menu .bar.bar-stable{
     background: #133c6a;
 }
 
-.menu .bar.bar-stable h1{
+.menu .bar.bar-stable h2{
     color: white;
 }
 
@@ -67,6 +82,9 @@ h3.titulo{
     font-size: 12px;
     height: 24px;
     line-height: 24px;
+    color: black;
+    background: none !important;
+    font-weight: bold;
 }
 
 #quem-somos p{
