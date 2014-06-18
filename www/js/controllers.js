@@ -21,39 +21,39 @@ angular.module('blueBrokers.controllers', [])
 
 .controller('CategoriaCtrl', ['$scope', '$stateParams',function($scope, $stateParams) {
 
-        $scope.categoriaId = $stateParams.categoriaId;
+    $scope.categoriaId = $stateParams.categoriaId;
 
-        $scope.subcategorias = [
-            { nome: 'Marca A', id: 1, categoria: 'Barcos'},
-            { nome: 'Marca B', id: 2, categoria: 'Barcos'},
-            { nome: 'Marca C', id: 3, categoria: 'Barcos'}
-        ];
+    $scope.subcategorias = [
+        { nome: 'Marca A', id: 1, categoria: 'Barcos'},
+        { nome: 'Marca B', id: 2, categoria: 'Barcos'},
+        { nome: 'Marca C', id: 3, categoria: 'Barcos'}
+    ];
 
-        $scope.getPreviousTitle = function() {
-            return '';
-        };
-
-
-
-    }])
-
-    .controller('SubcategoriaCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
-
-        $scope.categoriaId = $stateParams.categoriaId;
-
-        $scope.produtos = [
-            { nome: 'Barco ABC', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00', destaque: true},
-            { nome: 'Barco GHI', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00', destaque: true},
-            { nome: 'Barco DEF', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA'},
-            { nome: 'Barco XYZ', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00'}
-        ];
+    $scope.getPreviousTitle = function() {
+        return '';
+    };
 
 
-        $scope.getPreviousTitle = function() {
-            return '';
-        };
 
-    }])
+}])
+
+.controller('SubcategoriaCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+
+    $scope.categoriaId = $stateParams.categoriaId;
+
+    $scope.produtos = [
+        { nome: 'Barco ABC', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00', destaque: true},
+        { nome: 'Barco GHI', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00', destaque: true},
+        { nome: 'Barco DEF', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA'},
+        { nome: 'Barco XYZ', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00'}
+    ];
+
+
+    $scope.getPreviousTitle = function() {
+        return '';
+    };
+
+}])
 
 .controller('ProdutoCtrl', ['$scope','$stateParams','$ionicModal',function($scope, $stateParams, $ionicModal) {
 
@@ -154,14 +154,22 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('Anuncio4Ctrl', ['$scope','$stateParams',function($scope, $stateParams) {
+.controller('Anuncio4Ctrl', ['$scope','$stateParams', '$http',function($scope, $stateParams, $http) {
 
     $scope.categoriaId = $stateParams.categoriaId;
     $scope.subcategoriaId = $stateParams.subcategoriaId;
 
+   $scope.anuncio = {};
+
     $scope.titulos = {
         categoria : 'Barcos',
         subcategoria : 'Marca A'
+        }
+
+    $scope.enviaAnuncio = function(eValido) {
+           // if(eValido){
+                console.log(this.anuncio);
+           // }
         }
 
 
