@@ -5,16 +5,17 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('CategoriasCtrl', ['$scope', function($scope) {
-    $scope.categorias = [
-        { nome: 'Barcos', id: 1 },
-        { nome: 'Jetski', id: 2 },
-        { nome: 'Motos Vip', id: 3 },
-        { nome: 'Veleiros', id: 4 },
-        { nome: 'Imóveis', id: 5 },
-        { nome: 'Aeronaves', id: 6 },
-        { nome: 'Ultra Steamer', id: 7 }
-    ];
+.controller('CategoriasCtrl', ['$scope', 'dataFactory', function($scope, dataFactory) {
+
+    getCategorias();
+
+    function getCategorias(){
+        dataFactory.getCategorias().success(function(data){
+            $scope.categorias = data;
+        });
+    }
+
+
 
 
 }])
