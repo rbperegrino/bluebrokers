@@ -1,18 +1,18 @@
 angular.module('blueBrokers')
     .factory('dataFactory', ['$http', function($http) {
 
-        var urlBase = 'http://localhost/bluebrokerAPI/api/';
+        var urlBase = 'http://localhost:8080/bluebrokers/server/api/';
         var dataFactory = {};
 
         dataFactory.getCategorias = function () {
             return $http.get(urlBase + 'categoria');
         };
 
-        dataFactory.getCustomer = function (id) {
-            return $http.get(urlBase + '/' + id);
+        dataFactory.getSubcategoria = function (id) {
+            return $http.get(urlBase + '/subcategoria/' + id);
         };
 
-        dataFactory.insertCustomer = function (cust) {
+        dataFactory.setAnuncio = function (cust) {
             return $http.post(urlBase, cust);
         };
 
