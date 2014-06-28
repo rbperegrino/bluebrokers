@@ -20,15 +20,19 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('CategoriaCtrl', ['$scope', '$stateParams',function($scope, $stateParams) {
+.controller('CategoriaCtrl', ['$scope', '$stateParams', 'dataFactory' ,function($scope, $stateParams, dataFactory) {
 
     $scope.categoriaId = $stateParams.categoriaId;
 
-    $scope.subcategorias = [
-        { nome: 'Marca A', id: 1, categoria: 'Barcos'},
-        { nome: 'Marca B', id: 2, categoria: 'Barcos'},
-        { nome: 'Marca C', id: 3, categoria: 'Barcos'}
-    ];
+    getSubcategorias($stateParams.categoriaId);
+
+    function getSubcategorias(categoriaId){
+        dataFactory.getSubcategorias(categoriaId).success(function(data){
+            $scope.subcategorias = data;
+
+        });
+    }
+
 
     $scope.getPreviousTitle = function() {
         return '';
@@ -38,9 +42,9 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('SubcategoriaCtrl', ['$scope','$stateParams', function($scope, $stateParams) {
+.controller('SubcategoriaCtrl', ['$scope','$stateParams', 'dataFactory' , function($scope, $stateParams, dataFactory) {
 
-    $scope.categoriaId = $stateParams.categoriaId;
+    $scope.subcategoriaId = $stateParams.subcategoriaId;
 
     $scope.produtos = [
         { nome: 'Barco ABC', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00', destaque: true},
@@ -49,6 +53,20 @@ angular.module('blueBrokers.controllers', [])
         { nome: 'Barco XYZ', id: 1, categoria: 'Barcos', subcategoria: 'Marca A', localizacao: 'Salvador - BA', valor: 'R$ 000.000,00'}
     ];
 
+        getAnuncios($stateParams.subcategoriaId);
+
+        function getAnuncios(categoriaId){
+            dataFactory.getAnuncios(categoriaId).success(function(data){
+                $scope.anuncios = data;
+
+            });
+        }
+
+
+        $scope.getPreviousTitle = function() {
+            return '';
+        };
+
 
     $scope.getPreviousTitle = function() {
         return '';
@@ -56,11 +74,20 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('ProdutoCtrl', ['$scope','$stateParams','$ionicModal',function($scope, $stateParams, $ionicModal) {
+.controller('ProdutoCtrl', ['$scope','$stateParams','dataFactory',function($scope, $stateParams, dataFactory) {
 
         $scope.subcategoriaId = $stateParams.subcategoriaId;
 
-        $scope.produto =
+        getAnuncio($stateParams.produtoId);
+
+        function getAnuncio(anuncioId){
+            dataFactory.getAnuncio(anuncioId).success(function(data){
+                $scope.produto = data;
+                console.log(data);
+            });
+        }
+
+        /*$scope.produto =
         {
             nome: 'Barco XYZ',
             email: 'rbperegrino@globo.com',
@@ -77,39 +104,10 @@ angular.module('blueBrokers.controllers', [])
                 'http://www.reidaverdade.net/wp-content/uploads/2011/01/iate.jpg',
                 'http://www.reidaverdade.net/wp-content/uploads/2011/01/iate.jpg'
             ],
-            telefones: {
-                claro : '71 88725470',
-                oi : '71 88725470',
-                tim : '71 88725470',
-                vivo : '71 88725470'
-            }
+            telefone: '71 3245-3199',
         }
-        ;
+        ;*/
 
-        $ionicModal.fromTemplateUrl('modal.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function(modal) {
-            $scope.modal = modal;
-        });
-        $scope.openModal = function() {
-            $scope.modal.show();
-        };
-        $scope.closeModal = function() {
-            $scope.modal.hide();
-        };
-        //Cleanup the modal when we're done with it!
-        $scope.$on('$destroy', function() {
-            $scope.modal.remove();
-        });
-        // Execute action on hide modal
-        $scope.$on('modal.hide', function() {
-            // Execute action
-        });
-        // Execute action on remove modal
-        $scope.$on('modal.removed', function() {
-            // Execute action
-        });
 
         $scope.getPreviousTitle = function() {
             return '';
@@ -128,29 +126,31 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('Anuncio2Ctrl', ['$scope','$stateParams',function($scope, $stateParams) {
-        $scope.categorias = [
-            { nome: 'Barcos', id: 1 },
-            { nome: 'Jetski', id: 2 },
-            { nome: 'Motos Vip', id: 3 },
-            { nome: 'Veleiros', id: 4 },
-            { nome: 'Imóveis', id: 5 },
-            { nome: 'Aeronaves', id: 6 },
-            { nome: 'Ultra Steamer', id: 7 }
-        ];
+.controller('Anuncio2Ctrl', ['$scope','$stateParams', 'dataFactory' ,function($scope, $stateParams, dataFactory) {
+
+        getCategorias();
+
+        function getCategorias(){
+            dataFactory.getCategorias().success(function(data){
+                $scope.categorias = data;
+            });
+        }
 
 
  }])
 
-.controller('Anuncio3Ctrl', ['$scope','$stateParams',function($scope, $stateParams) {
+.controller('Anuncio3Ctrl', ['$scope','$stateParams', 'dataFactory',function($scope, $stateParams, dataFactory) {
 
         $scope.categoriaId = $stateParams.categoriaId;
 
-        $scope.subcategorias = [
-            { nome: 'Marca A', id: 1, categoria: 'Barcos'},
-            { nome: 'Marca B', id: 2, categoria: 'Barcos'},
-            { nome: 'Marca C', id: 3, categoria: 'Barcos'}
-        ];
+        getSubcategorias($stateParams.categoriaId);
+
+        function getSubcategorias(categoriaId){
+            dataFactory.getSubcategorias(categoriaId).success(function(data){
+                $scope.subcategorias = data;
+
+            });
+        }
 
 
 }])

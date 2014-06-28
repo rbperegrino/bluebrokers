@@ -39,11 +39,11 @@ angular.module('blueBrokers', ['ionic', 'blueBrokers.controllers'])
       }
     })
 
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.naoEncontrou', {
+      url: "/naoEncontrou",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/naoencontrei.html"
         }
       }
     })

@@ -10,13 +10,13 @@
               <input type="text" placeholder="Buscar">
           </label>
       </div>
-    <h3 class="titulo">{{ produtos[0].categoria }} / {{ produtos[0].subcategoria }}</h3>
+    <h3 class="titulo">{{ anuncios[0].categoria }} / {{ anuncios[0].subcategoria }}</h3>
       <ion-list class="list" id="produtos">
-          <ion-item ng-repeat="produto in produtos | orderBy:destaque" href="#/app/produto/{{produto.id}}" class="item item-thumbnail-left" ng-class="(produto.destaque) ? 'destaque' : ''">
+          <ion-item ng-repeat="produto in anuncios | orderBy:destaque" href="#/app/produto/{{produto.id}}" class="item item-thumbnail-left" ng-class="(produto.destaque) ? 'destaque' : ''">
               <img src="img/barco.jpg" width="50">
-              <h2>{{produto.nome}}</h2>
-              <h5>{{produto.localizacao}}</h5>
-              <p>{{produto.valor || 'Solicite Orçamento'}}</p>
+              <h2>{{produto.titulo}}</h2>
+              <h5>{{produto.cidade}} - {{produto.estado}}</h5>
+              <p> {{produto.valor || 'Solicite Orçamento'}}</p>
           </ion-item>
       </ion-list>
   </ion-content>

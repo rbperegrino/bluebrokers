@@ -46,6 +46,7 @@ return array(
             'rules'=>array(
                 // REST
                 array('api/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
+                array('api/list', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
                 array('api/view', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
                 array('api/update', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'PUT'),
                 array('api/delete', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'DELETE'),

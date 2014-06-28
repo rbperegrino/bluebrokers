@@ -22,7 +22,7 @@ class ApiController extends Controller
     }
 
     // Actions
-    public function actionList()
+    public function actionList($id = null)
     {
         // Get the respective model instance
         switch($_GET['model'])
@@ -30,6 +30,19 @@ class ApiController extends Controller
             case 'categoria':
                 $models = Categoria::model()->findAll();
                 break;
+            case 'subcategoria':
+                $models = Subcategoria::model()->with('categoria')->findAllByAttributes(array('categoria_id' => $id));
+                break;
+            case 'anuncios':
+                $anuncio = array('subcategoria_id' => $id, 'status' => 1);
+                $criteria = new CDbCriteria(array('order'=>'t.destaque DESC, t.criado ASC'));
+                $models = Anuncio::model()->with('subcategoria')->findAllByAttributes($anuncio, $criteria);
+                break;
+
+            case 'anuncio':
+                $models = Anuncio::model()->with('subcategoria')->findByPk($id);
+                break;
+
             default:
                 // Model not implemented error
                 $this->_sendResponse(501, sprintf(
@@ -44,9 +57,13 @@ class ApiController extends Controller
                 sprintf('No items where found for model <b>%s</b>', $_GET['model']) );
         } else {
             // Prepare response
-            $rows = array();
-            foreach($models as $model)
-                $rows[] = $model->attributes;
+            if(isset($models->attributes)){
+                $rows = $this->trataModel($models);
+            }
+            else{
+                $rows = $this->trataModels($models);
+            }
+
             // Send the response
             $this->_sendResponse(200, CJSON::encode($rows));
         }
@@ -166,4 +183,55 @@ class ApiController extends Controller
             $this->_sendResponse(401, 'Error: User Password is invalid');
         }
     }
+
+    private function trataModels($models){
+        $rows = array();
+        $index = 0;
+        foreach($models as $model){
+            $rows[] = $model->attributes;
+            if(isset($model->categoria_id))
+                $rows[$index]['categoria'] = $model->categoria->nome;
+
+            if(isset($model->subcategoria_id)){
+
+                $rows[$index]['categoria'] = $model->subcategoria->categoria->nome;
+                $rows[$index]['subcategoria'] = $model->subcategoria->nome;
+                $rows[$index]['valor'] = 'R$ ' . $rows[$index]['valor'];
+
+                if($rows[$index]['destaque'])
+                    $rows[$index]['destaque'] == 'true';
+                else
+                    unset($rows[$index]['destaque']);
+
+                unset($rows[$index]['ano']);
+                unset($rows[$index]['descricao']);
+                unset($rows[$index]['email']);
+                unset($rows[$index]['telefone']);
+                unset($rows[$index]['atributo_1']);
+                unset($rows[$index]['atributo_2']);
+                unset($rows[$index]['atributo_3']);
+                unset($rows[$index]['status']);
+                unset($rows[$index]['subcategoria_id']);
+                unset($rows[$index]['criado']);
+                unset($rows[$index]['criado_por']);
+                unset($rows[$index]['modificado']);
+                unset($rows[$index]['modificado_por']);
+
+
+            }
+
+
+            $index++;
+        }
+
+        return $rows;
+    }
+
+    private function trataModel($model){
+
+
+
+        return $model->attributes;
+    }
+
 }

@@ -15,6 +15,9 @@
  */
 class Categoria extends CActiveRecord
 {
+
+
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -58,8 +61,9 @@ class Categoria extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+        return array(
+            'subcategoria' => array(self::HAS_MANY, 'Subcategoria', 'categoria_id'),
+        );
 	}
 
 	/**
@@ -103,4 +107,7 @@ class Categoria extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+
+
 }

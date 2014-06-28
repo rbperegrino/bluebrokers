@@ -124,3 +124,235 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/bluebrokerAPI/api/categoria
 ---
+2014/06/28 09:55:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "subcategoria".' in E:\www\bluebrokers\server\fw\web\CController.php:483
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\web\CController.php(270): CController->missingAction('subcategoria')
+#1 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('subcategoria')
+#2 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/subcategori...')
+#3 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bluebrokers/server/api/subcategoria/subcategoria/1
+---
+2014/06/28 09:57:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in E:\www\bluebrokers\server\fw\web\CController.php:336
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#4 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#5 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#6 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/bluebrokers/server/api/categoria
+---
+2014/06/28 10:02:58 [error] [exception.CException] exception 'CException' with message 'Property "Subcategoria.categoria" is not defined.' in E:\www\bluebrokers\server\fw\base\CComponent.php:173
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(159): CComponent->__set('categoria', 'Barcos??')
+#1 E:\www\bluebrokers\server\protected\models\Subcategoria.php(115): CActiveRecord->__set('categoria', 'Barcos??')
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1809): Subcategoria->afterFind()
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1830): CActiveRecord->populateRecord(Array, true)
+#4 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1297): CActiveRecord->populateRecords(Array, true, NULL)
+#5 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#6 E:\www\bluebrokers\server\protected\controllers\ApiController.php(34): CActiveRecord->findAllByAttributes(Array)
+#7 [internal function]: ApiController->actionList('1')
+#8 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#9 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#10 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#14 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#15 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bluebrokers/server/api/subcategoria/1
+---
+2014/06/28 10:04:21 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "categoria" is not defined in active record class "Subcategoria".' in E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php:211
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(281): CActiveFinder->buildJoinTree(Object(CJoinElement), 'categoria')
+#1 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1301): CActiveFinder->__construct(Object(Subcategoria), Array)
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#4 E:\www\bluebrokers\server\protected\controllers\ApiController.php(34): CActiveRecord->findAllByAttributes(Array)
+#5 [internal function]: ApiController->actionList('1')
+#6 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#7 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#8 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#12 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#13 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#14 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/bluebrokers/server/api/subcategoria/1
+---
+2014/06/28 10:06:43 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "nome" is not defined in active record class "Categoria".' in E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php:211
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(281): CActiveFinder->buildJoinTree(Object(CJoinElement), 'categoria.nome')
+#1 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1301): CActiveFinder->__construct(Object(Subcategoria), Array)
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#4 E:\www\bluebrokers\server\protected\controllers\ApiController.php(34): CActiveRecord->findAllByAttributes(Array)
+#5 [internal function]: ApiController->actionList('1')
+#6 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#7 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#8 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#12 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#13 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#14 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/bluebrokers/server/api/subcategoria/1
+---
+2014/06/28 10:16:21 [error] [exception.CException] exception 'CException' with message 'Property "Categoria.categoria" is not defined.' in E:\www\bluebrokers\server\fw\base\CComponent.php:130
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(143): CComponent->__get('categoria')
+#1 E:\www\bluebrokers\server\protected\models\Categoria.php(113): CActiveRecord->__get('categoria')
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(998): Categoria->afterFind()
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(727): CActiveRecord->afterFindInternal()
+#4 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(729): CJoinElement->afterFind()
+#5 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(69): CJoinElement->afterFind()
+#6 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1302): CActiveFinder->query(Object(CDbCriteria), true)
+#7 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#8 E:\www\bluebrokers\server\protected\controllers\ApiController.php(34): CActiveRecord->findAllByAttributes(Array)
+#9 [internal function]: ApiController->actionList('1')
+#10 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#11 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#12 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#16 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#17 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#18 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/bluebrokers/server/api/subcategoria/1
+---
+2014/06/28 10:16:48 [error] [exception.CException] exception 'CException' with message 'Property "Subcategoria.categoria_nome" is not defined.' in E:\www\bluebrokers\server\fw\base\CComponent.php:173
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(159): CComponent->__set('categoria_nome', 'Barcos??')
+#1 E:\www\bluebrokers\server\protected\models\Subcategoria.php(116): CActiveRecord->__set('categoria_nome', 'Barcos??')
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(998): Subcategoria->afterFind()
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(727): CActiveRecord->afterFindInternal()
+#4 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(69): CJoinElement->afterFind()
+#5 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1302): CActiveFinder->query(Object(CDbCriteria), true)
+#6 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#7 E:\www\bluebrokers\server\protected\controllers\ApiController.php(34): CActiveRecord->findAllByAttributes(Array)
+#8 [internal function]: ApiController->actionList('1')
+#9 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#10 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#11 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#15 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#16 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#17 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/bluebrokers/server/api/subcategoria/1
+---
+2014/06/28 11:17:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "anuncios".' in E:\www\bluebrokers\server\fw\web\CController.php:483
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\web\CController.php(270): CController->missingAction('anuncios')
+#1 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('anuncios')
+#2 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/anuncios/un...')
+#3 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bluebrokers/server/api/anuncios/undefined
+HTTP_REFERER=http://localhost/bluebrokers/www/
+---
+2014/06/28 11:18:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "anuncios".' in E:\www\bluebrokers\server\fw\web\CController.php:483
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\web\CController.php(270): CController->missingAction('anuncios')
+#1 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('anuncios')
+#2 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/anuncios/un...')
+#3 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#4 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/bluebrokers/server/api/anuncios/undefined
+HTTP_REFERER=http://localhost/bluebrokers/www/
+---
+2014/06/28 11:35:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'criado' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`titulo` AS `t0_c1`, `t`.`descricao` AS `t0_c2`, `t`.`ano` AS `t0_c3`, `t`.`telefone` AS `t0_c4`, `t`.`email` AS `t0_c5`, `t`.`cidade` AS `t0_c6`, `t`.`estado` AS `t0_c7`, `t`.`valor` AS `t0_c8`, `t`.`destaque` AS `t0_c9`, `t`.`atributo_1` AS `t0_c10`, `t`.`atributo_2` AS `t0_c11`, `t`.`atributo_3` AS `t0_c12`, `t`.`status` AS `t0_c13`, `t`.`subcategoria_id` AS `t0_c14`, `t`.`criado` AS `t0_c15`, `t`.`criado_por` AS `t0_c16`, `t`.`modificado` AS `t0_c17`, `t`.`modificado_por` AS `t0_c18`, `subcategoria`.`id` AS `t1_c0`, `subcategoria`.`nome` AS `t1_c1`, `subcategoria`.`categoria_id` AS `t1_c2`, `subcategoria`.`status` AS `t1_c3`, `subcategoria`.`criado` AS `t1_c4`, `subcategoria`.`criado_por` AS `t1_c5`, `subcategoria`.`modificado` AS `t1_c6`, `subcategoria`.`modificado_por` AS `t1_c7` FROM `tbl_anuncio` `t`  LEFT OUTER JOIN `tbl_subcategoria` `subcategoria` ON (`t`.`subcategoria_id`=`subcategoria`.`id`)  WHERE (`t`.`subcategoria_id`=:yp0 AND `t`.`status`=:yp1) ORDER BY destaque, criado ASC.
+in E:\www\bluebrokers\server\protected\controllers\ApiController.php (39)
+in E:\www\bluebrokers\server\index.php (13)
+2014/06/28 11:35:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'criado' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`titulo` AS `t0_c1`, `t`.`descricao` AS `t0_c2`, `t`.`ano` AS `t0_c3`, `t`.`telefone` AS `t0_c4`, `t`.`email` AS `t0_c5`, `t`.`cidade` AS `t0_c6`, `t`.`estado` AS `t0_c7`, `t`.`valor` AS `t0_c8`, `t`.`destaque` AS `t0_c9`, `t`.`atributo_1` AS `t0_c10`, `t`.`atributo_2` AS `t0_c11`, `t`.`atributo_3` AS `t0_c12`, `t`.`status` AS `t0_c13`, `t`.`subcategoria_id` AS `t0_c14`, `t`.`criado` AS `t0_c15`, `t`.`criado_por` AS `t0_c16`, `t`.`modificado` AS `t0_c17`, `t`.`modificado_por` AS `t0_c18`, `subcategoria`.`id` AS `t1_c0`, `subcategoria`.`nome` AS `t1_c1`, `subcategoria`.`categoria_id` AS `t1_c2`, `subcategoria`.`status` AS `t1_c3`, `subcategoria`.`criado` AS `t1_c4`, `subcategoria`.`criado_por` AS `t1_c5`, `subcategoria`.`modificado` AS `t1_c6`, `subcategoria`.`modificado_por` AS `t1_c7` FROM `tbl_anuncio` `t`  LEFT OUTER JOIN `tbl_subcategoria` `subcategoria` ON (`t`.`subcategoria_id`=`subcategoria`.`id`)  WHERE (`t`.`subcategoria_id`=:yp0 AND `t`.`status`=:yp1) ORDER BY destaque, criado ASC' in E:\www\bluebrokers\server\fw\db\CDbCommand.php:541
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(761): CDbCommand->queryAll()
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1302): CActiveFinder->query(Object(CDbCriteria), true)
+#5 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#6 E:\www\bluebrokers\server\protected\controllers\ApiController.php(39): CActiveRecord->findAllByAttributes(Array, Object(CDbCriteria))
+#7 [internal function]: ApiController->actionList('1')
+#8 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#9 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#10 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#14 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#15 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bluebrokers/server/api/anuncios/1
+HTTP_REFERER=http://localhost/bluebrokers/www/
+---
+2014/06/28 11:35:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'criado' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`titulo` AS `t0_c1`, `t`.`descricao` AS `t0_c2`, `t`.`ano` AS `t0_c3`, `t`.`telefone` AS `t0_c4`, `t`.`email` AS `t0_c5`, `t`.`cidade` AS `t0_c6`, `t`.`estado` AS `t0_c7`, `t`.`valor` AS `t0_c8`, `t`.`destaque` AS `t0_c9`, `t`.`atributo_1` AS `t0_c10`, `t`.`atributo_2` AS `t0_c11`, `t`.`atributo_3` AS `t0_c12`, `t`.`status` AS `t0_c13`, `t`.`subcategoria_id` AS `t0_c14`, `t`.`criado` AS `t0_c15`, `t`.`criado_por` AS `t0_c16`, `t`.`modificado` AS `t0_c17`, `t`.`modificado_por` AS `t0_c18`, `subcategoria`.`id` AS `t1_c0`, `subcategoria`.`nome` AS `t1_c1`, `subcategoria`.`categoria_id` AS `t1_c2`, `subcategoria`.`status` AS `t1_c3`, `subcategoria`.`criado` AS `t1_c4`, `subcategoria`.`criado_por` AS `t1_c5`, `subcategoria`.`modificado` AS `t1_c6`, `subcategoria`.`modificado_por` AS `t1_c7` FROM `tbl_anuncio` `t`  LEFT OUTER JOIN `tbl_subcategoria` `subcategoria` ON (`t`.`subcategoria_id`=`subcategoria`.`id`)  WHERE (`t`.`subcategoria_id`=:yp0 AND `t`.`status`=:yp1) ORDER BY destaque, criado ASC.
+in E:\www\bluebrokers\server\protected\controllers\ApiController.php (39)
+in E:\www\bluebrokers\server\index.php (13)
+2014/06/28 11:35:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'criado' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`titulo` AS `t0_c1`, `t`.`descricao` AS `t0_c2`, `t`.`ano` AS `t0_c3`, `t`.`telefone` AS `t0_c4`, `t`.`email` AS `t0_c5`, `t`.`cidade` AS `t0_c6`, `t`.`estado` AS `t0_c7`, `t`.`valor` AS `t0_c8`, `t`.`destaque` AS `t0_c9`, `t`.`atributo_1` AS `t0_c10`, `t`.`atributo_2` AS `t0_c11`, `t`.`atributo_3` AS `t0_c12`, `t`.`status` AS `t0_c13`, `t`.`subcategoria_id` AS `t0_c14`, `t`.`criado` AS `t0_c15`, `t`.`criado_por` AS `t0_c16`, `t`.`modificado` AS `t0_c17`, `t`.`modificado_por` AS `t0_c18`, `subcategoria`.`id` AS `t1_c0`, `subcategoria`.`nome` AS `t1_c1`, `subcategoria`.`categoria_id` AS `t1_c2`, `subcategoria`.`status` AS `t1_c3`, `subcategoria`.`criado` AS `t1_c4`, `subcategoria`.`criado_por` AS `t1_c5`, `subcategoria`.`modificado` AS `t1_c6`, `subcategoria`.`modificado_por` AS `t1_c7` FROM `tbl_anuncio` `t`  LEFT OUTER JOIN `tbl_subcategoria` `subcategoria` ON (`t`.`subcategoria_id`=`subcategoria`.`id`)  WHERE (`t`.`subcategoria_id`=:yp0 AND `t`.`status`=:yp1) ORDER BY destaque, criado ASC' in E:\www\bluebrokers\server\fw\db\CDbCommand.php:541
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(761): CDbCommand->queryAll()
+#2 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 E:\www\bluebrokers\server\fw\db\ar\CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1302): CActiveFinder->query(Object(CDbCriteria), true)
+#5 E:\www\bluebrokers\server\fw\db\ar\CActiveRecord.php(1482): CActiveRecord->query(Object(CDbCriteria), true)
+#6 E:\www\bluebrokers\server\protected\controllers\ApiController.php(39): CActiveRecord->findAllByAttributes(Array, Object(CDbCriteria))
+#7 [internal function]: ApiController->actionList('1')
+#8 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ApiController), Array)
+#9 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ApiController), Object(ReflectionMethod), Array)
+#10 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 E:\www\bluebrokers\server\fw\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 E:\www\bluebrokers\server\fw\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): CController->run('list')
+#14 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController('api/list')
+#15 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#16 E:\www\bluebrokers\server\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/bluebrokers/server/api/anuncios/1
+---
+2014/06/28 11:53:25 [error] [php] Trying to get property of non-object (E:\www\bluebrokers\server\protected\controllers\ApiController.php:186)
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\www\bluebrokers\server\fw\web\CController.php(286): ApiController->runAction()
+#4 E:\www\bluebrokers\server\fw\web\CController.php(265): ApiController->runActionWithFilters()
+#5 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): ApiController->run()
+#6 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#8 E:\www\bluebrokers\server\index.php(13): CWebApplication->run()
+REQUEST_URI=/bluebrokers/server/api/anuncio/1
+in E:\www\bluebrokers\server\protected\controllers\ApiController.php (186)
+in E:\www\bluebrokers\server\protected\controllers\ApiController.php (60)
+in E:\www\bluebrokers\server\index.php (13)
+2014/06/28 11:55:35 [error] [php] Trying to get property of non-object (E:\www\bluebrokers\server\protected\controllers\ApiController.php:60)
+Stack trace:
+#0 E:\www\bluebrokers\server\fw\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\www\bluebrokers\server\fw\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\www\bluebrokers\server\fw\web\CController.php(286): ApiController->runAction()
+#3 E:\www\bluebrokers\server\fw\web\CController.php(265): ApiController->runActionWithFilters()
+#4 E:\www\bluebrokers\server\fw\web\CWebApplication.php(282): ApiController->run()
+#5 E:\www\bluebrokers\server\fw\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\www\bluebrokers\server\fw\base\CApplication.php(169): CWebApplication->processRequest()
+#7 E:\www\bluebrokers\server\index.php(13): CWebApplication->run()
+REQUEST_URI=/bluebrokers/server/api/anuncios/1
+in E:\www\bluebrokers\server\protected\controllers\ApiController.php (60)
+in E:\www\bluebrokers\server\index.php (13)

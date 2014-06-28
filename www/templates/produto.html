@@ -9,13 +9,14 @@
       <div class="list card padding-bottom">
 
           <div class="item">
-              <h2>{{produto.nome}}</h2>
-              <p class="localizacao">{{produto.localizacao}}</p>
+              <h2>{{produto.titulo}}</h2>
+              <p class="localizacao">{{produto.cidade}} - {{produto.estado}}</p>
               <p class="preco">{{produto.valor}}</p>
           </div>
 
           <div class="item item-body">
-              <img class="full-image" ng-src="{{produto.fotos[0]}}">
+              <!--<img class="full-image" ng-src="{{produto.fotos[0]}}">-->
+              <img class="full-image" src="http://www.reidaverdade.net/wp-content/uploads/2011/01/iate.jpg">
 
               <div class="item tabs tabs-secondary tabs-icon-left padding-bottom">
                   <a class="tab-item" href="mailto:email@email.com">
