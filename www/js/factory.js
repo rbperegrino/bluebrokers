@@ -1,7 +1,7 @@
 angular.module('blueBrokers')
     .factory('dataFactory', ['$http', function($http) {
 
-        var urlBase = 'http://localhost/bluebrokers/server/api/';
+        var urlBase = '../server/api/';
         var dataFactory = {};
 
         dataFactory.getCategorias = function () {

@@ -5,33 +5,71 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
-.controller('CategoriasCtrl', ['$scope', 'dataFactory', function($scope, dataFactory) {
+.controller('CategoriasCtrl', ['$scope', 'dataFactory', '$ionicLoading', function($scope, dataFactory, $ionicLoading) {
+
+
 
     getCategorias();
 
     function getCategorias(){
+        showLoading();
         dataFactory.getCategorias().success(function(data){
             $scope.categorias = data;
+            hideLoading();
+        });
+    }
+
+    function showLoading(){
+        $ionicLoading.show({
+            content: 'Carregando...',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
         });
     }
 
 
 
+    function hideLoading(){
+        $ionicLoading.hide();
+    }
+
+
 
 }])
 
-.controller('CategoriaCtrl', ['$scope', '$stateParams', 'dataFactory' ,function($scope, $stateParams, dataFactory) {
+.controller('CategoriaCtrl', ['$scope', '$stateParams', 'dataFactory', '$ionicLoading' ,function($scope, $stateParams, dataFactory, $ionicLoading) {
 
     $scope.categoriaId = $stateParams.categoriaId;
 
     getSubcategorias($stateParams.categoriaId);
 
     function getSubcategorias(categoriaId){
+        showLoading();
         dataFactory.getSubcategorias(categoriaId).success(function(data){
             $scope.subcategorias = data;
-
+            hideLoading();
         });
     }
+
+
+    function showLoading(){
+        $ionicLoading.show({
+            content: 'Carregando...',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+    }
+
+
+
+    function hideLoading(){
+        $ionicLoading.hide();
+    }
+
 
 
     $scope.getPreviousTitle = function() {
