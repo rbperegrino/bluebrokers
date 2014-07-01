@@ -45,7 +45,7 @@ return array(
             'appendParams' => true,
             'rules'=>array(
                 // REST
-                array('api/busca', 'pattern'=>'api/busca', 'verb'=>'GET'),
+                array('api/busca', 'pattern'=>'api/busca', 'verb'=>'POST'),
                 array('api/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
                 array('api/list', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'GET'),
                 array('api/view', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'GET'),

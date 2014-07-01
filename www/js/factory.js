@@ -21,7 +21,7 @@ angular.module('blueBrokers')
         };
 
         dataFactory.getBusca = function (chave) {
-            return $http.get(urlBase+ 'busca/' + chave);
+            return $http.post(urlBase + 'busca', chave);
         };
 
         dataFactory.updateCustomer = function (cust) {

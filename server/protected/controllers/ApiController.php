@@ -84,11 +84,15 @@ class ApiController extends Controller
 
      public function actionBusca()
     {
-        $anuncio = array('titulo' => $_GET['titulo'], 'status' => 1);
-        $criteria = new CDbCriteria(array('order'=>'t.destaque DESC, t.criado ASC'));
-        $models = Anuncio::model()->findAllByAttributes($anuncio, $criteria);
-        var_dump($models);
+
+        var_dump($_REQUEST);
         die;
+
+        $anuncio = array('status' => 1);
+        $criteria = new CDbCriteria(array('order'=>'t.destaque DESC, t.criado ASC'));
+        $criteria->compare('titulo',$_POST['titulo'],true);
+        $models = Anuncio::model()->findAllByAttributes($anuncio, $criteria);
+              
         $rows = $this->trataModels($models);
         $this->_sendResponse(200, CJSON::encode($rows));
     }
