@@ -214,4 +214,52 @@ angular.module('blueBrokers.controllers', [])
 
 }])
 
+.controller('BuscaCtrl', ['$scope', '$stateParams' , '$ionicLoading' , 'dataFactory', function($scope, $stateParams, $ionicLoading, dataFactory) {
+
+
+$scope.chaveBusca = "";
+
+$scope.buscar = function () {
+   if($scope.chaveBusca != ""){
+       showLoading();
+       dataFactory.getBusca($scope.chaveBusca).success(function(data){
+           $scope.produto = data;
+           console.log(data);
+           hideLoading();
+       });
+   }
+
+};
+
+
+function showLoading(){
+    $ionicLoading.show({
+        content: 'Buscando...',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+    });
+}
+
+
+
+function hideLoading(){
+    $ionicLoading.hide();
+}
+
+
+
+function getBusca(chave){
+    console.log(chave);
+    //showLoading();
+    dataFactory.getBusca(chave).success(function(data){
+        //$scope.produto = data;
+        //hideLoading();
+        console.log(data);
+    });
+}
+
+}])
+
 ;

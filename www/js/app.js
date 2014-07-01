@@ -135,6 +135,15 @@ angular.module('blueBrokers', ['ionic', 'blueBrokers.controllers'])
           templateUrl: "templates/quem_somos.html"
       }
   }
+})
+.state('app.busca', {
+  url: "/busca/:chaveBusca",
+  views: {
+      'menuContent' :{
+          templateUrl: "templates/subcategoria.html",
+          controller: 'BuscaCtrl'
+      }
+  }
 });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/categorias');

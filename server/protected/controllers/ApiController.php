@@ -42,6 +42,7 @@ class ApiController extends Controller
             case 'anuncio':
                 $models = Anuncio::model()->with('subcategoria')->findByPk($id);
                 break;
+           
 
             default:
                 // Model not implemented error
@@ -79,6 +80,17 @@ class ApiController extends Controller
     }
     public function actionDelete()
     {
+    }
+
+     public function actionBusca()
+    {
+        $anuncio = array('titulo' => $_GET['titulo'], 'status' => 1);
+        $criteria = new CDbCriteria(array('order'=>'t.destaque DESC, t.criado ASC'));
+        $models = Anuncio::model()->findAllByAttributes($anuncio, $criteria);
+        var_dump($models);
+        die;
+        $rows = $this->trataModels($models);
+        $this->_sendResponse(200, CJSON::encode($rows));
     }
 
     private function _sendResponse($status = 200, $body = '', $content_type = 'text/html')

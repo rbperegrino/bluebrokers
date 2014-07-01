@@ -7,11 +7,13 @@
       <a href="#/app/novoAnuncio" id="bt-app" class="button button-icon button-positive"> Publicar </a>
   </ion-nav-buttons>
   <ion-content class="has-header">
-      <div class="busca list list-inset">
+      <div class="busca list list-inset" ng-controller="BuscaCtrl">
+          <form ng-submit="buscar()">
           <label class="item item-input">
               <i class="icon ion-search placeholder-icon"></i>
-              <input type="text" placeholder="Buscar">
+              <input type="text" ng-model="chaveBusca" placeholder="Buscar">
           </label>
+          </form>
       </div>
     <ion-list class="list lista-categorias">
       <ion-item ng-repeat="categoria in categorias" href="#/app/categorias/{{categoria.id}}" class="categorias">

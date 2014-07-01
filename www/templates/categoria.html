@@ -4,11 +4,13 @@
 
   </ion-nav-buttons>
   <ion-content class="has-header">
-      <div class="busca list list-inset">
-          <label class="item item-input">
-              <i class="icon ion-search placeholder-icon"></i>
-              <input type="text" placeholder="Buscar">
-          </label>
+      <div class="busca list list-inset" ng-controller="BuscaCtrl">
+          <form ng-submit="buscar()">
+              <label class="item item-input">
+                  <i class="icon ion-search placeholder-icon"></i>
+                  <input type="text" ng-model="chaveBusca" placeholder="Buscar">
+              </label>
+          </form>
       </div>
       <h3 class="titulo">{{subcategorias[0].categoria || 'Não Informado'}}</h3>
       <ion-list id="subcategorias" class="list">

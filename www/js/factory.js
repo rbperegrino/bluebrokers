@@ -20,8 +20,8 @@ angular.module('blueBrokers')
             return $http.get(urlBase + 'anuncio/' + id);
         };
 
-        dataFactory.setAnuncio = function (cust) {
-            return $http.post(urlBase, cust);
+        dataFactory.getBusca = function (chave) {
+            return $http.get(urlBase+ 'busca/' + chave);
         };
 
         dataFactory.updateCustomer = function (cust) {
